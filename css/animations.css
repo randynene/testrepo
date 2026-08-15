@@ -1,0 +1,103 @@
+/* GSAP animation hooks — hidden-state defaults, nav indicator, hover-lift, safety fallbacks.
+   Kept separate from styles.css so the animation layer can be reasoned about (or removed) on its own. */
+
+/* Hero entrance elements start hidden only for the narrow, above-the-fold scope below,
+   so there is no flash of unstyled content before the on-load timeline runs. Everything
+   else (scroll-triggered reveals) is hidden by JS only once GSAP has actually loaded. */
+.js-hero-el,
+.js-hero-el--right{
+  opacity:0;
+}
+.js-hero-el{ transform:translateY(24px); }
+.js-hero-el--right{ transform:translateX(40px); }
+
+/* Safety net: if GSAP fails to load (blocked CDN, offline), animations.js adds this
+   class after a short timeout so hero content is never permanently invisible. */
+.force-visible .js-hero-el,
+.force-visible .js-hero-el--right{
+  opacity:1 !important;
+  transform:none !important;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .js-hero-el,
+  .js-hero-el--right{
+    opacity:1 !important;
+    transform:none !important;
+  }
+  .btn,
+  .card-feature,
+  .card-model,
+  .card-pricing,
+  .writing-card,
+  .service-row,
+  .booking-slot{
+    transition:none !important;
+  }
+  .btn:hover,
+  .card-feature:hover,
+  .card-model:hover,
+  .card-pricing:hover,
+  .writing-card:hover,
+  .service-row:hover{
+    transform:none !important;
+  }
+}
+
+/* Sliding nav underline indicator */
+.nav__links{ position:relative; }
+.nav__indicator{
+  position:absolute;
+  left:0;
+  bottom:-1px;
+  height:2px;
+  width:0;
+  background:var(--color-primary);
+  border-radius:2px;
+  opacity:0;
+  pointer-events:none;
+}
+
+/* Restrained hover lift — cards and buttons only, no rotation/bounce */
+.btn{ transition:background-color .12s linear,color .12s linear,transform .2s ease; }
+.btn:hover{ transform:translateY(-1px); }
+
+.card-feature,
+.card-model,
+.card-pricing,
+.writing-card,
+.service-row{
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.card-feature:hover,
+.card-model:hover,
+.card-pricing:hover,
+.writing-card:hover,
+.service-row:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 32px rgba(20,20,19,0.10);
+}
+
+.booking-slot{ transition:background-color .12s linear,transform .2s ease; }
+.booking-slot:hover{ transform:translateX(2px); }
+
+/* Process step rule line (drawn in on scroll) */
+.process-step__rule{
+  height:1px;
+  width:100%;
+  background:var(--border-hairline);
+  transform-origin:left center;
+}
+
+/* Word-mask headline reveal — each word masked in its own overflow box so it
+   can rise into place without the whole line clipping oddly. */
+.word-mask{ display:inline-block; overflow:hidden; vertical-align:bottom; }
+.word-mask > span{ display:inline-block; }
+
+/* Feature card icon — Lucide, 24px, 2px stroke, never coral/filled */
+.card-feature__icon{
+  color:var(--text-heading);
+  margin-bottom:var(--space-xs);
+  display:flex;
+}
+.card-feature__icon svg{ width:24px; height:24px; }

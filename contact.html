@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact us — MarketingAgent</title>
+<meta name="description" content="Let us look at your hardest roles. We reply to every enquiry within one working day, or book a strategy call directly.">
+<link rel="canonical" href="/contact">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-wrap">
+
+  <header class="nav-shell">
+    <nav class="nav">
+      <a href="index.html" class="nav__brand wordmark" aria-label="MarketingAgent home">MarketingAgent</a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="services.html" class="nav__link">Our services</a>
+        <a href="contact.html" class="nav__link is-active">Contact us</a>
+        <span class="nav__indicator" aria-hidden="true"></span>
+      </div>
+      <div class="nav__actions">
+        <a href="#" class="btn btn--text btn--sm">Client login</a>
+        <a href="contact.html" class="btn btn--primary btn--sm">Book a strategy call</a>
+      </div>
+      <button class="nav__hamburger" data-nav-open aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </nav>
+  </header>
+
+  <div class="nav-sheet" data-nav-sheet>
+    <div class="nav-sheet__top">
+      <span class="wordmark">MarketingAgent</span>
+      <button class="nav-sheet__close" data-nav-close aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="nav-sheet__links">
+      <a href="index.html" class="nav-sheet__link">Home</a>
+      <a href="services.html" class="nav-sheet__link">Our services</a>
+      <a href="contact.html" class="nav-sheet__link is-active">Contact us</a>
+    </nav>
+    <div class="nav-sheet__actions">
+      <a href="contact.html" class="btn btn--primary btn--lg btn--full">Book a strategy call</a>
+      <a href="#" class="btn btn--text">Client login</a>
+    </div>
+  </div>
+
+  <main id="main" data-screen-label="Contact us">
+
+    <header class="contact-hero" data-block="contact.hero">
+      <div class="contact-hero__inner">
+        <div class="eyebrow js-hero-el">Contact us</div>
+        <h1 class="contact-hero__title js-hero-el">Let us look at your hardest roles</h1>
+        <span class="status-dot js-hero-el"><span class="status-dot__dot status-dot__dot--success"></span>We reply to every enquiry within one working day</span>
+      </div>
+    </header>
+
+    <section class="contact-body">
+      <div class="contact-body__inner">
+
+        <form class="enquiry-form" data-block="contact-form" data-hook="webhook" data-integration="zapier|hubspot|n8n" action="https://hooks.example.com/marketingagent/enquiry" method="post" novalidate>
+          <div class="enquiry-form__heading">Tell us about the hiring</div>
+
+          <div class="enquiry-form__grid">
+            <div class="field">
+              <label class="field__label" for="full_name">Your name</label>
+              <input class="input" type="text" id="full_name" name="full_name" placeholder="Jamie Fischer">
+              <div class="field__note" data-default-text=""></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="email">Work email</label>
+              <input class="input" type="email" id="email" name="email" placeholder="jamie@company.com">
+              <div class="field__note" data-default-text=""></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="company">Company</label>
+              <input class="input" type="text" id="company" name="company" placeholder="Company name">
+              <div class="field__note" data-default-text=""></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="job_title">Your role</label>
+              <input class="input" type="text" id="job_title" name="job_title" placeholder="Head of talent">
+            </div>
+            <div class="field">
+              <label class="field__label" for="open_roles">Roles to fill</label>
+              <input class="input" type="text" id="open_roles" name="open_roles" placeholder="e.g. 6">
+            </div>
+            <div class="field">
+              <label class="field__label" for="locations">Locations</label>
+              <input class="input" type="text" id="locations" name="locations" placeholder="Berlin, remote EU">
+            </div>
+            <div class="field">
+              <label class="field__label" for="budget">Budget band</label>
+              <select class="select" id="budget" name="budget">
+                <option>Under €25k</option>
+                <option>€25k to €75k</option>
+                <option>€75k to €150k</option>
+                <option>Over €150k</option>
+                <option>Not decided yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field__label" for="timeline">Timeline</label>
+              <select class="select" id="timeline" name="timeline">
+                <option>Starting now</option>
+                <option>Next quarter</option>
+                <option>Within six months</option>
+                <option>Planning ahead</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="message">What is stuck</label>
+            <textarea class="textarea" id="message" name="message" rows="4" placeholder="Which roles, what you have tried, and what good would look like."></textarea>
+            <div class="field__note" data-default-text=""></div>
+          </div>
+
+          <div class="field">
+            <label class="checkbox-field">
+              <input type="checkbox" name="consent" value="yes">
+              <span>You may email me about this enquiry and occasional notes on talent marketing. We store enquiries in our CRM and nothing else.</span>
+            </label>
+            <div class="field__note" data-default-text=""></div>
+          </div>
+
+          <div class="enquiry-form__submit-row">
+            <button type="submit" class="btn btn--primary btn--lg" data-form-submit>Send enquiry</button>
+            <span class="enquiry-form__note" data-form-note>Posts to the endpoint in the form action.</span>
+          </div>
+        </form>
+
+        <div class="rail">
+          <div class="booking-card" data-block="booking">
+            <div class="booking-card__heading">Or book the call directly</div>
+            <p class="booking-card__desc">Thirty minutes with the strategy and media leads. Calendar slots sync from our booking tool.</p>
+            <div class="booking-slots" data-hook="calendar">
+              <button type="button" class="booking-slot"><span>Tuesday 18 August</span><span class="booking-slot__time">10:00 CET</span></button>
+              <button type="button" class="booking-slot"><span>Wednesday 19 August</span><span class="booking-slot__time">14:30 CET</span></button>
+              <button type="button" class="booking-slot"><span>Friday 21 August</span><span class="booking-slot__time">09:00 CET</span></button>
+            </div>
+            <div class="booking-card__footnote">Times shown in your local zone once connected.</div>
+          </div>
+
+          <div class="contact-card" data-block="direct-contacts">
+            <div class="eyebrow">Straight to a person</div>
+            <div class="contact-list">
+              <div>
+                <div class="contact-item__label">New business</div>
+                <a href="mailto:hello@marketingagent.com" class="contact-item__value">hello@marketingagent.com</a>
+              </div>
+              <div>
+                <div class="contact-item__label">Media and partnerships</div>
+                <a href="mailto:media@marketingagent.com" class="contact-item__value">media@marketingagent.com</a>
+              </div>
+              <div>
+                <div class="contact-item__label">Working here</div>
+                <a href="#" class="contact-item__value">See open roles at MarketingAgent</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card contact-card--outline" data-block="office">
+            <div class="eyebrow">Studio</div>
+            <div class="studio-address">Oranienstraße 140<br>10969 Berlin<br>Germany</div>
+            <div class="map-slot" data-hook="map">Map embed slot</div>
+            <a href="#" class="text-link" style="font-size:14px;">Open in maps</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="wordmark wordmark--on-dark" style="font-size:20px;">MarketingAgent</span>
+      <div class="footer__grid">
+        <div>
+          <div class="footer__col-title">Services</div>
+          <a href="services.html" class="footer__link">Employer brand strategy</a>
+          <a href="services.html" class="footer__link">Recruitment campaigns</a>
+          <a href="services.html" class="footer__link">Careers site</a>
+          <a href="services.html" class="footer__link">Talent CRM</a>
+          <a href="services.html" class="footer__link">Analytics</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Company</div>
+          <a href="#" class="footer__link">About</a>
+          <a href="#" class="footer__link">Team</a>
+          <a href="#" class="footer__link">Open roles</a>
+          <a href="#" class="footer__link">Writing</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Resources</div>
+          <a href="#" class="footer__link">Case studies</a>
+          <a href="#" class="footer__link">Hiring benchmarks</a>
+          <a href="#" class="footer__link">Media rate card</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <a href="mailto:hello@marketingagent.com" class="footer__link">hello@marketingagent.com</a>
+          <a href="contact.html" class="footer__link">Berlin studio</a>
+          <a href="contact.html" class="footer__link">Book a call</a>
+        </div>
+      </div>
+      <div class="footer__note">© 2026 MarketingAgent. Talent marketing, employer brand and recruitment media.</div>
+    </div>
+  </footer>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/animations.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
