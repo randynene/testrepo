@@ -93,7 +93,7 @@
 
 /* Feature card icon — Lucide, 20px, 2px stroke, accent-colored */
 .card-feature__icon{
-  color:var(--link);
+  color:var(--accent-300);
   margin-bottom:var(--space-xs);
   display:flex;
 }

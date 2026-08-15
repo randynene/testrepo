@@ -141,6 +141,7 @@ select{ appearance:none; -webkit-appearance:none; -moz-appearance:none; }
   font-size:var(--text-button);
   line-height:var(--lh-button);
   font-weight:var(--weight-label);
+  padding:var(--space-sm) calc(var(--space-md) * 0.75);
   border-radius:var(--radius-md);
   border:1px solid transparent;
   cursor:pointer;
@@ -265,7 +266,7 @@ select{ appearance:none; -webkit-appearance:none; -moz-appearance:none; }
 /* Cards                                                              */
 /* ---------------------------------------------------------------- */
 .card-feature{
-  background:var(--surface-card);
+  background:var(--surface-dark);
   border-radius:var(--radius-md);
   padding:var(--space-xl);
   display:flex;
@@ -283,7 +284,8 @@ select{ appearance:none; -webkit-appearance:none; -moz-appearance:none; }
 .card-feature__desc{
   font-size:var(--text-body-md);
   line-height:var(--lh-body-md);
-  color:var(--text-body);
+  opacity:0.9;
+  color:var(--text-heading);
   text-wrap:pretty;
 }
 
@@ -383,7 +385,7 @@ select{ appearance:none; -webkit-appearance:none; -moz-appearance:none; }
   box-sizing:border-box;
   box-shadow:var(--shadow-sm);
 }
-.callout--coral{ background:var(--surface-card); }
+.callout--coral{ background:var(--surface-dark); box-shadow:none; }
 .callout--dark{ background:var(--surface-card); }
 .callout__eyebrow{
   font-size:var(--text-caption-uppercase);
@@ -392,6 +394,7 @@ select{ appearance:none; -webkit-appearance:none; -moz-appearance:none; }
   font-weight:var(--weight-label);
   color:var(--link);
 }
+.callout--coral .callout__eyebrow{ color:var(--accent-200); }
 .callout__title{
   font-family:var(--font-display);
   font-weight:var(--weight-display);
@@ -407,6 +410,9 @@ select{ appearance:none; -webkit-appearance:none; -moz-appearance:none; }
   max-width:52ch;
   color:var(--text-body);
 }
+.callout--coral .callout__desc{ color:var(--accent-200); }
+.callout--coral .btn--on-coral{ color:var(--accent-100); border-color:var(--accent-300); }
+.callout--coral .btn--on-coral:hover{ background:color-mix(in srgb, var(--accent-100) 12%, transparent); }
 .callout__action{ margin-top:var(--space-xs); }
 
 /* ---------------------------------------------------------------- */
