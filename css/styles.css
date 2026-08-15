@@ -372,6 +372,7 @@ select{ appearance:none; -webkit-appearance:none; -moz-appearance:none; }
 .card-pricing__feature-check{ color:var(--link); flex:0 0 auto; }
 .card-pricing--featured .card-pricing__feature-check{ color:var(--accent-300); }
 .card-pricing__action{ margin-top:auto; padding-top:var(--space-md); }
+.card-pricing__action .btn{ padding:11px 17px; font-size:15px; }
 .card-pricing--featured .btn--primary{ color:var(--accent-300); border-color:var(--accent-300); }
 .card-pricing--featured .btn--primary:hover{ background:color-mix(in srgb, var(--accent-300) 12%, transparent); }
 
