@@ -30,16 +30,13 @@
   .card-model,
   .card-pricing,
   .writing-card,
-  .service-row,
   .booking-slot{
     transition:none !important;
   }
-  .btn:hover,
   .card-feature:hover,
   .card-model:hover,
   .card-pricing:hover,
-  .writing-card:hover,
-  .service-row:hover{
+  .writing-card:hover{
     transform:none !important;
   }
 }
@@ -58,34 +55,34 @@
   pointer-events:none;
 }
 
-/* Restrained hover lift — cards and buttons only, no rotation/bounce */
-.btn{ transition:background-color .12s linear,color .12s linear,transform .2s ease; }
-.btn:hover{ transform:translateY(-1px); }
+/* Restrained hover — cards only; buttons and rows tint, they don't lift */
+.btn{ transition:background-color .12s linear,color .12s linear; }
 
 .card-feature,
 .card-model,
 .card-pricing,
-.writing-card,
-.service-row{
-  transition:transform .3s ease,box-shadow .3s ease;
+.writing-card{
+  transition:transform .2s ease,box-shadow .2s ease;
 }
 .card-feature:hover,
 .card-model:hover,
 .card-pricing:hover,
-.writing-card:hover,
-.service-row:hover{
-  transform:translateY(-4px);
-  box-shadow:0 16px 32px rgba(20,20,19,0.10);
+.writing-card:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-md);
+}
+.card-pricing--featured:hover{
+  box-shadow:var(--shadow-lg);
 }
 
-.booking-slot{ transition:background-color .12s linear,transform .2s ease; }
-.booking-slot:hover{ transform:translateX(2px); }
+.booking-slot{ transition:background-color .12s linear; }
 
 /* Process step rule line (drawn in on scroll) */
 .process-step__rule{
-  height:1px;
-  width:100%;
-  background:var(--border-hairline);
+  height:2px;
+  width:28px;
+  background:var(--link);
+  margin-bottom:var(--space-lg);
   transform-origin:left center;
 }
 
@@ -94,10 +91,10 @@
 .word-mask{ display:inline-block; overflow:hidden; vertical-align:bottom; }
 .word-mask > span{ display:inline-block; }
 
-/* Feature card icon — Lucide, 24px, 2px stroke, never coral/filled */
+/* Feature card icon — Lucide, 20px, 2px stroke, accent-colored */
 .card-feature__icon{
-  color:var(--text-heading);
+  color:var(--link);
   margin-bottom:var(--space-xs);
   display:flex;
 }
-.card-feature__icon svg{ width:24px; height:24px; }
+.card-feature__icon svg{ width:20px; height:20px; }

@@ -29,7 +29,9 @@ ul,ol{margin:0;padding:0;list-style:none}
 button{font-family:inherit}
 code,pre{font-family:var(--font-mono);font-size:var(--text-code);line-height:var(--lh-code)}
 img{max-width:100%;display:block}
-::selection{background:rgba(204,120,92,0.22)}
+::selection{background:color-mix(in srgb, var(--color-primary) 30%, transparent)}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
 
 .visually-hidden{
   position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
