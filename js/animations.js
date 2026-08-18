@@ -88,10 +88,10 @@
   /* Hero on-load timeline (Home / Services / Contact — whichever      */
   /* hero elements exist on the current page)                          */
   /* ---------------------------------------------------------------- */
-  var heroBlock = document.querySelector('[data-block="hero"], [data-block="services.hero"], [data-block="contact.hero"]');
+  var heroBlock = document.querySelector('[data-block="hero"], [data-block="services.hero"], [data-block="contact.hero"], [data-block="about.hero"]');
   if (heroBlock) {
     var heroItems = gsap.utils.toArray('.js-hero-el', heroBlock);
-    var heroTitle = heroBlock.querySelector('.hero__title, .services-hero__title, .contact-hero__title');
+    var heroTitle = heroBlock.querySelector('.hero__title, .services-hero__title, .contact-hero__title, .about-hero__title');
     var heroArtifact = document.querySelector('.js-hero-el--right');
 
     var htl = gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.1 });
@@ -154,7 +154,10 @@
     { sel: '.card-pricing', y: 28, stagger: 0.12, extra: 'count', countSel: '.card-pricing__price' },
     { sel: '.enquiry-form', y: 24, stagger: 0 },
     { sel: '.rail > div', y: 24, stagger: 0.12 },
-    { sel: '.booking-slot', y: 12, stagger: 0.08 }
+    { sel: '.booking-slot', y: 12, stagger: 0.08 },
+    { sel: '.about-intro__inner', y: 20, stagger: 0 },
+    { sel: '.about-practice-item', y: 20, stagger: 0.1 },
+    { sel: '.fit-grid > div', y: 20, stagger: 0.15 }
   ];
 
   GROUPS.forEach(function (g) {
